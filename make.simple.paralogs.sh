@@ -6,10 +6,10 @@ do
 rm p.fq q.fq p1.fq q1.fq 2>/dev/null
 	for j in {1..50};
 	do
-	zcat PopC_${i}.F.fq.gz | grep -A3 "data${j}_" | head -100 >> p.fq &
-	zcat PopC_${i}.R.fq.gz | grep -A3 "data${j}_" | head -100 >> q.fq &
-	zcat PopD_${i}.F.fq.gz | grep -A3 "data${j}_" | head -100 >> p1.fq &
-	zcat PopD_${i}.R.fq.gz | grep -A3 "data${j}_" | head -100 >> q1.fq
+	zcat PopC_${i}.F.fq.gz | grep -A3 "data${j}_"  >> p.fq &
+	zcat PopC_${i}.R.fq.gz | grep -A3 "data${j}_"  >> q.fq &
+	zcat PopD_${i}.F.fq.gz | grep -A3 "data${j}_"  >> p1.fq &
+	zcat PopD_${i}.R.fq.gz | grep -A3 "data${j}_"  >> q1.fq
 	wait
 	done
 
